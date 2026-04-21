@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="container">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr_0.8fr]">
           <div>
-            <div className="font-display text-4xl uppercase leading-none text-white">Stride Forward</div>
-            <p className="mt-4 max-w-md text-sm leading-7 text-white/65">
-              Premium ledo ritulio stovyklos landing page vizualas, pritaikytas vaikams, pažengusiems sportininkams ir
-              profesionaliems atletams.
-            </p>
+            <img
+              src="/Logoledo.jpg"
+              alt="Stride Forward"
+              className="h-40 w-auto rounded-2xl"
+            />
           </div>
 
           <div>

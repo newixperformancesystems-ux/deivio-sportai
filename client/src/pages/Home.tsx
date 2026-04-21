@@ -60,7 +60,7 @@ const participantBenefits = [
 const campFlow = [
   {
     title: 'Grupės',
-    text: 'Formuojame Elito, moterų / merginų ir jaunimo grupes pagal amžų ir fiziškumo lygį.',
+    text: 'Formuojame Elito, moterų / merginų ir jaunimo grupes pagal amžių ir fizinio pasirengimo lygį.',
     meta: 'Kiekvienas sportininkas dirba jam tinkamiausioje aplinkoje',
   },
   {
@@ -95,11 +95,11 @@ const coaches = [
 const testimonials = [
   {
     name: 'Audra Vilimienė',
-    text: 'Puiki stovykla! Mano sūnus per vasarą padarė neticetinus progresus. Treneriai yra profesionalai, kurie tikrai rūpinasi kėžimo žaidėjų tobulinimusi. Rekomenduojame!',
+    text: 'Puiki stovykla! Mano sūnus per vasarą padarė neįtikėtinų pokyčių. Treneriai – profesionalai, kurie tikrai rūpinasi žaidėjų tobulėjimu. Rekomenduojame!',
   },
   {
     name: 'Vytautas Kasparas',
-    text: 'Svarbu, kad stovykla orientuota ne tik į treniruotes, bet ir į individualaus sportininko poreikius. Dukra grižo namie energinga ir motyvuota. Tikrai verta!',
+    text: 'Svarbu, kad stovykla orientuota ne tik į treniruotes, bet ir į individualius sportininko poreikius. Dukra grįžo namo energinga ir motyvuota. Tikrai verta!',
   },
   {
     name: 'Laima Čekauskienė',
@@ -544,7 +544,7 @@ export default function Home() {
                   <div className="grid gap-3 sm:grid-cols-2">
                     {[
                       { label: 'Vardas, Pavardė', type: 'text', placeholder: 'Vardas, Pavardė' },
-                      { label: 'Giminio data', type: 'date', placeholder: '' },
+                      { label: 'Gimimo data', type: 'date', placeholder: '' },
                       { label: 'Tėvų / įstaigos el. paštas', type: 'email', placeholder: 'El. paštas' },
                       { label: 'Telefonas', type: 'tel', placeholder: '+370' },
                     ].map((field) => (
@@ -576,7 +576,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-xs text-white/50 text-center sm:text-left">
-                    Po registracijos susisieksime per 24 valandas ir patikslinsime visus detales.
+                    Po registracijos susisieksime per 24 valandas ir patikslinsime visas detales.
                   </p>
                 </form>
               </AngularCard>

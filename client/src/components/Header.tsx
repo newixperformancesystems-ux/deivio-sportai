@@ -10,7 +10,6 @@ export default function Header() {
     { label: 'Stovykla', href: '#camp-flow' },
     { label: 'Treneriai', href: '#coaches' },
     { label: 'Kaina', href: '#pricing' },
-    { label: 'Registracija', href: '#registration' },
   ];
 
   return (

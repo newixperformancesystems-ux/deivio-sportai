@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomSelect from '@/components/CustomSelect';
+import RegistrationForm from '@/components/RegistrationForm';
 
 const backgroundImage = '/hero-hockey.jpg';
 
@@ -108,12 +108,12 @@ const testimonials = [
 ];
 
 const galleryItems = [
-  { title: 'Treniruočių akimirka', image: '/gallery/1.jpg' },
-  { title: 'Fizinis pasiruošimas', image: '/gallery/2.jpg' },
-  { title: 'Darbas ant ledo', image: '/gallery/3.jpg' },
-  { title: 'Technikos blokas', image: '/gallery/4.jpg' },
-  { title: 'Individualus dėmesys', image: '/gallery/5.jpg' },
-  { title: 'Komandinė atmosfera', image: '/gallery/6.jpg' },
+  { title: 'Treniruočių akimirka', image: '/gallery/1.jpg', objectPosition: 'center' },
+  { title: 'Darbas ant ledo', image: '/gallery/2.jpg', objectPosition: 'center' },
+  { title: 'Fizinis pasiruošimas', image: '/gallery/3.jpg', objectPosition: 'center' },
+  { title: 'Individualus dėmesys', image: '/gallery/4.jpg', objectPosition: 'center' },
+  { title: 'Technikos blokas', image: '/gallery/5.jpg', objectPosition: 'top' },
+  { title: 'Komandinė atmosfera', image: '/gallery/6.jpg', objectPosition: 'center' },
 ];
 
 const includedItems = [
@@ -480,6 +480,7 @@ export default function Home() {
                       src={item.image}
                       alt={item.title}
                       loading="lazy"
+                      style={{ objectPosition: item.objectPosition }}
                       className="h-full w-full object-cover transition group-hover:scale-105"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
@@ -538,45 +539,7 @@ export default function Home() {
               />
 
               <AngularCard>
-                <form className="mx-auto max-w-2xl grid gap-3">
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {[
-                      { label: 'Vardas, Pavardė', type: 'text', placeholder: 'Vardas, Pavardė' },
-                      { label: 'Gimimo data', type: 'date', placeholder: '' },
-                      { label: 'Tėvų / įstaigos el. paštas', type: 'email', placeholder: 'El. paštas' },
-                      { label: 'Telefonas', type: 'tel', placeholder: '+370' },
-                    ].map((field) => (
-                      <label key={field.label} className="block">
-                        <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-                          {field.label}
-                        </span>
-                        <input
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className="h-12 w-full rounded-xl border border-white/10 bg-black/30 px-4 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-primary"
-                        />
-                      </label>
-                    ))}
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <CustomSelect
-                      label="Pozicija"
-                      options={['Puolėjas', 'Gynėjas', 'Vartininkas']}
-                    />
-                    <CustomSelect
-                      label="Treniruotės grupė"
-                      options={['U-14 2 kartai 30€ per sav.', 'U-16 3 kartai 40€ per sav.', 'U-20 4 kartai 50€ per sav.', 'Pro 5 kartai 60€ per sav.']}
-                    />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <input type="checkbox" id="terms" className="rounded" />
-                    <label htmlFor="terms" className="text-xs text-white/60">Aš sutinku su registracijos sąlygomis</label>
-                  </div>
-
-                  <p className="text-xs text-white/50 text-center sm:text-left">
-                    Po registracijos susisieksime per 24 valandas ir patikslinsime visas detales.
-                  </p>
-                </form>
+                <RegistrationForm />
               </AngularCard>
             </div>
           </section>

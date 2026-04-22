@@ -62,7 +62,7 @@ async function startServer() {
     }
 
     const payload = (req.body ?? {}) as RegistrationPayload;
-    if (!payload.fullName || !payload.email || !payload.phone) {
+    if (!payload.fullName || !payload.birthDate || !payload.email || !payload.phone) {
       res.status(400).json({ ok: false, error: "Trūksta privalomų laukų" });
       return;
     }

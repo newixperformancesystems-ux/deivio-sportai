@@ -108,12 +108,12 @@ const testimonials = [
 ];
 
 const galleryItems = [
-  'Treniruočių akimirka',
-  'Fizinis pasiruošimas',
-  'Darbas ant ledo',
-  'Technikos blokas',
-  'Individualus dėmesys',
-  'Komandinė atmosfera',
+  { title: 'Treniruočių akimirka', image: '/gallery/1.jpg' },
+  { title: 'Fizinis pasiruošimas', image: '/gallery/2.jpg' },
+  { title: 'Darbas ant ledo', image: '/gallery/3.jpg' },
+  { title: 'Technikos blokas', image: '/gallery/4.jpg' },
+  { title: 'Individualus dėmesys', image: '/gallery/5.jpg' },
+  { title: 'Komandinė atmosfera', image: '/gallery/6.jpg' },
 ];
 
 const includedItems = [
@@ -473,20 +473,18 @@ export default function Home() {
               <div className="grid gap-4 md:grid-cols-3">
                 {galleryItems.map((item) => (
                   <div
-                    key={item}
+                    key={item.title}
                     className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-black/30 transition hover:border-primary/40"
                   >
-                    <div
-                      className="h-full w-full bg-cover bg-center transition group-hover:scale-105"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, rgba(230,64,47,0.3), rgba(230,64,47,0.1)), url(${backgroundImage})`,
-                      }}
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition group-hover:bg-black/20">
-                      <div className="text-center">
-                        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">Kadras</div>
-                        <div className="mt-2 font-display text-xl text-white">{item}</div>
-                      </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Kadras</div>
+                      <div className="mt-1 font-display text-xl text-white">{item.title}</div>
                     </div>
                   </div>
                 ))}

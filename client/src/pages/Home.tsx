@@ -303,7 +303,7 @@ export default function Home() {
                       },
                       {
                         title: 'Orientuojamės į tai, kas iš tikrųjų svarbu ledo rituliui',
-                        desc: 'Lavename greitį, galią, mobilumą, stabilumą, koordinaciją ir judėjimo kokybę taip, kad tai turėtų realų perkėlimą į žaidimą.',
+                        desc: 'Laviname greitį, galią, mobilumą, stabilumą, koordinaciją ir judėjimo kokybę taip, kad tai turėtų realų perkėlimą į žaidimą.',
                       },
                       {
                         title: 'Paverčiame vasarą realaus progreso laikotarpiu',

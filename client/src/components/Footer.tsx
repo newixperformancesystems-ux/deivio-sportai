@@ -46,12 +46,12 @@ export default function Footer() {
               >
                 <Instagram size={18} />
               </a>
-              <a
-                href="#"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/6 text-white/70 transition hover:border-primary/40 hover:text-white"
+              <span
+                aria-label="Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/6 text-white/70"
               >
                 <Facebook size={18} />
-              </a>
+              </span>
             </div>
           </div>
         </div>

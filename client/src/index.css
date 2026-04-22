@@ -122,6 +122,7 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 12px;
   }
 
   body {

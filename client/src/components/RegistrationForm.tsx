@@ -134,10 +134,6 @@ export default function RegistrationForm() {
         />
       </div>
 
-      <p className="text-xs text-white/50 text-center sm:text-left">
-        Po registracijos susisieksime per 24 valandas ir patikslinsime visas detales.
-      </p>
-
       <button
         type="submit"
         disabled={status === 'submitting'}

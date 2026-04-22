@@ -94,15 +94,15 @@ const coaches = [
 
 const testimonials = [
   {
-    name: 'Audra Vilimienė',
+    name: 'Audra V.',
     text: 'Puiki stovykla! Mano sūnus per vasarą padarė neįtikėtinų pokyčių. Treneriai – profesionalai, kurie tikrai rūpinasi žaidėjų tobulėjimu. Rekomenduojame!',
   },
   {
-    name: 'Vytautas Kasparas',
+    name: 'Vytautas K.',
     text: 'Svarbu, kad stovykla orientuota ne tik į treniruotes, bet ir į individualius sportininko poreikius. Dukra grįžo namo energinga ir motyvuota. Tikrai verta!',
   },
   {
-    name: 'Laima Čekauskienė',
+    name: 'Laima Č.',
     text: 'Didelis pliusas - profesionali aplinka ir kokybiškas vedimas. Sūnus iš tiesų juda į priekį. Jau žinome, kad grįšime ir kitą vasarą!',
   },
 ];
@@ -191,7 +191,7 @@ export default function Home() {
                   </h1>
 
                   <p className="mt-8 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
-                    Lavename fizines savybes, kurios svarbiausios šiuolaikiniam ledo ritulininkui. Kiekviena treniruotė orientuota į realų progresą ir perkėlimą į žaidimą.
+                    Laviname fizines savybes, kurios svarbiausios šiuolaikiniam ledo ritulininkui. Kiekviena treniruotė orientuota į realų progresą ir perkėlimą į žaidimą.
                   </p>
                   <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                     <a
@@ -367,7 +367,7 @@ export default function Home() {
             <div className="container">
               <SectionTitle
                 title="Kaip vyksta stovykla"
-                description="Programa sustruktūrinta taip, kad kiekvienas sportininkas dirbtų jam tinkamiausioje aplinkoje ir gautų maksimalų progresą."
+                description="Programa struktūrizuota taip, kad kiekvienas sportininkas dirbtų jam tinkamiausioje aplinkoje ir gautų maksimalų progresą."
               />
 
               <div className="grid gap-5 lg:grid-cols-3">
@@ -379,7 +379,7 @@ export default function Home() {
                     </div>
                     <h3 className="font-display text-3xl uppercase text-white">{item.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-white/72">{item.text}</p>
-                    <div className="mt-6 rounded-2xl border border-white/10 bg-black/25 p-4 text-xs text-white/60">
+                    <div className="mt-6 rounded-2xl border border-white/10 bg-black/25 p-4 text-sm leading-7 text-white/72">
                       {item.meta}
                     </div>
                   </AngularCard>
@@ -392,7 +392,7 @@ export default function Home() {
             <div className="container">
               <SectionTitle
                 title="Treneriai"
-                description="Jūsų komanda susideda iš patirtų specialistų, kurie turi realų patirtį aukščiausiame lygyje ir žino, kaip padėti sportininkams augti."
+                description="Mūsų komanda susideda iš patyrusių specialistų, kurie turi realią patirtį aukščiausiame lygyje ir žino, kaip padėti sportininkams augti."
               />
 
               <div className="flex flex-wrap justify-center gap-5">
@@ -465,10 +465,7 @@ export default function Home() {
 
           <section id="gallery" className="py-12 md:py-16 scroll-mt-[80px]">
             <div className="container">
-              <SectionTitle
-                title="Galerija"
-                description="Kadangi dabar fokusas yra vizualinė pusė, galerijos bloką paruošiau kaip stiprią nuotraukų sieną. Vėliau čia tiesiog pakeisime paveikslus tavo tikromis stovyklos nuotraukomis."
-              />
+              <SectionTitle title="Galerija" description="" />
 
               <div className="grid gap-4 md:grid-cols-3">
                 {galleryItems.map((item) => (
@@ -496,7 +493,7 @@ export default function Home() {
           <section id="pricing" className="py-12 md:py-16 scroll-mt-[80px]">
             <div className="container">
               <SectionTitle
-                title="Kaina ir vietos"
+                title="Kaina"
                 description="Pasirinkite tinkamą treniruotės grupę ir investuokite į savo atletinį augimą."
               />
 
@@ -504,7 +501,7 @@ export default function Home() {
                 {[
                   { group: 'U-14', sessions: 2, price: 30, description: 'Jauniausia grupė' },
                   { group: 'U-16', sessions: 3, price: 40, description: 'Vidutinio amžiaus' },
-                  { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniausiųjų jaunimo' },
+                  { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniųjų jaunimo' },
                   { group: 'Pro', sessions: 5, price: 60, description: 'Profesionali grupė' },
                 ].map((tier) => (
                   <AngularCard key={tier.group} className="flex flex-col">

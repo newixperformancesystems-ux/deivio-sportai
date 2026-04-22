@@ -343,7 +343,7 @@ export default function Home() {
                 description="Mūsų programa orientuota į realų fizinį progresą. Kiekviena treniruotė skirta ugdyti tas savybes, kurios tiesiogiai reikalingos ant ledo ir rungtynėse."
               />
 
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 [grid-auto-rows:1fr]">
                 {participantBenefits.map((item) => {
                   const Icon = item.icon;
                   return (

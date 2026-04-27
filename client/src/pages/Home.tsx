@@ -18,6 +18,7 @@ import {
   Users,
   Zap,
 } from 'lucide-react';
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import RegistrationForm from '@/components/RegistrationForm';
@@ -159,6 +160,21 @@ function AngularCard({ children, className = '' }: { children: React.ReactNode; 
 }
 
 export default function Home() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash) return;
+    const id = hash.slice(1);
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    const t = window.setTimeout(tryScroll, 100);
+    return () => window.clearTimeout(t);
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <div

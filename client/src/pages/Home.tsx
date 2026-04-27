@@ -95,12 +95,12 @@ const coaches = [
 
 const testimonials = [
   {
-    name: 'Audra V.',
-    text: 'Puiki stovykla! Mano sūnus per vasarą padarė neįtikėtinų pokyčių. Treneriai – profesionalai, kurie tikrai rūpinasi žaidėjų tobulėjimu. Rekomenduojame!',
+    name: 'Deimantas V.',
+    text: 'Deividas geba prisitaikyti prie skirtingų žaidėjų ir jų fizinio pasirengimo lygio. Labiausiai patinka, kad dirbam kaip komanda ir planus dėliojam kartu, todėl jie būna realistiški ir veiksmingi.',
   },
   {
-    name: 'Vytautas K.',
-    text: 'Svarbu, kad stovykla orientuota ne tik į treniruotes, bet ir į individualius sportininko poreikius. Dukra grįžo namo energinga ir motyvuota. Tikrai verta!',
+    name: 'Martynas G.',
+    text: 'Deivido įėjimas į vyrų ledo ritulio rinktinę labai daug pridėjo, aš asmeniškai žemės pasiruošimą jaučiu daug geriau.',
   },
   {
     name: 'Laima Č.',

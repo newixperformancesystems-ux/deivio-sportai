@@ -77,7 +77,7 @@ const campFlow = [
 
 const coaches = [
   {
-    name: 'Deividas Rinkevicius',
+    name: 'Deividas Rinkevičius',
     role: 'Fizinio rengimo treneris',
     image: '/devis.jpg',
     experience: 'Baigęs Lietuvos sporto universiteto sportinės veiklos analizės magistrą. Dirbdamas su jaunimo krepšinio rinktinėmis, BC "Kibirkštis", Lietuvos vyrų ledo ritulio rinktine ir Elektrėnų "Energija", padeda sportininkams ugdyti greitį, jėgą, galią ir ilgalaikį atletinį pasirengimą.',
@@ -503,6 +503,7 @@ export default function Home() {
                   { group: 'U-16', sessions: 3, price: 40, description: 'Vidutinio amžiaus' },
                   { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniųjų jaunimo' },
                   { group: 'Pro', sessions: 5, price: 60, description: 'Profesionali grupė' },
+                  { group: 'Merginos', sessions: 3, price: 40, description: 'Merginų grupė' },
                 ].map((tier) => (
                   <AngularCard key={tier.group} className="flex flex-col">
                     <div className="mb-6">

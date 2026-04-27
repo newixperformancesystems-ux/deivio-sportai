@@ -163,7 +163,7 @@ export default function TreniruotesOnline() {
 
         <section id="online-registration" className="container py-20">
           <SectionTitle
-            title="Registracija"
+            title="Online registracija"
             description="Užpildyk anketą — susisieksime ir suderinsime startą."
           />
 

@@ -169,7 +169,7 @@ export default function TreniruotesOnline() {
           <AngularCard className="overflow-hidden p-0">
             <div className="relative aspect-video w-full bg-black">
               <video
-                src="/online-training.mp4"
+                src="/uploads/online-training.mp4"
                 controls
                 playsInline
                 preload="metadata"

@@ -497,15 +497,18 @@ export default function Home() {
                 description="Pasirinkite tinkamą treniruotės grupę ir investuokite į savo atletinį augimą."
               />
 
-              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
                 {[
                   { group: 'U-14', sessions: 2, price: 30, description: 'Jauniausia grupė' },
                   { group: 'U-16', sessions: 3, price: 40, description: 'Vidutinio amžiaus' },
                   { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniųjų jaunimo' },
                   { group: 'Pro', sessions: 5, price: 60, description: 'Profesionali grupė' },
                   { group: 'Merginos', sessions: 3, price: 40, description: 'Merginų grupė' },
-                ].map((tier) => (
-                  <AngularCard key={tier.group} className="flex flex-col">
+                ].map((tier, idx) => (
+                  <AngularCard
+                    key={tier.group}
+                    className={`flex flex-col lg:col-span-2 ${idx === 3 ? 'lg:col-start-2' : ''}`}
+                  >
                     <div className="mb-6">
                       <div className="font-display text-3xl uppercase text-white">{tier.group}</div>
                       <p className="mt-2 text-xs text-white/60">{tier.description}</p>

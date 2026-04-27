@@ -128,6 +128,7 @@ export default function RegistrationForm() {
             'U-16 3 kartai 40€ per sav.',
             'U-20 4 kartai 50€ per sav.',
             'Pro 5 kartai 60€ per sav.',
+            'Merginos 3 kartai 40€ per sav.',
           ]}
           value={trainingGroup}
           onChange={setTrainingGroup}

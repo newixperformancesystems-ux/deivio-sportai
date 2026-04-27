@@ -143,22 +143,20 @@ export default function TreniruotesOnline() {
 
         <section id="video" className="container py-20">
           <SectionTitle
-            title="Kaip atrodo programa"
-            description="Trumpas pristatymas, kaip atletas naudoja TrainHeroic programėlę treniruočių metu."
+            title="TrainHeroic programėlė"
+            description="Programėlėje matysi, ką tiksliai turi atlikti kiekvienoje treniruotėje, suvesi rezultatus, o mes nuotoliu stebėsime tavo progresą ir koreguosime programą pagal tavo tikslus."
           />
 
           <AngularCard className="overflow-hidden p-0">
             <div className="relative aspect-video w-full bg-black">
-              <video
-                src="/uploads/online-training.mp4"
-                controls
-                playsInline
-                preload="metadata"
-                poster="/hero-hockey.jpg"
-                className="h-full w-full object-cover"
-              >
-                Jūsų naršyklė nepalaiko video atkūrimo.
-              </video>
+              <iframe
+                src="https://www.youtube.com/embed/525uuvndRbI?rel=0&modestbranding=1"
+                title="TrainHeroic programėlė"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
           </AngularCard>
         </section>

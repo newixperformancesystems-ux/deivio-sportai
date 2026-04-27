@@ -5,17 +5,17 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Pagrindinis', href: '#hero' },
-    { label: 'Naudos', href: '#benefits' },
-    { label: 'Stovykla', href: '#camp-flow' },
-    { label: 'Treneriai', href: '#coaches' },
-    { label: 'Kaina', href: '#pricing' },
+    { label: 'Pagrindinis', href: '/#hero' },
+    { label: 'Naudos', href: '/#benefits' },
+    { label: 'Stovykla', href: '/#camp-flow' },
+    { label: 'Treneriai', href: '/#coaches' },
+    { label: 'Kaina', href: '/#pricing' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
       <div className="container flex items-center justify-between py-4">
-        <a href="#hero" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img
             src="/Logoledo.jpg"
             alt="Stride Forward"
@@ -39,7 +39,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href="/treniruotesonline"
             className="group relative inline-flex overflow-hidden rounded-full border border-white/30 bg-gradient-to-r from-white/15 via-white/8 to-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(255,255,255,0.08)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/55 hover:bg-white/20"
@@ -48,7 +48,7 @@ export default function Header() {
             <span className="relative">Treniruotės online</span>
           </a>
           <a
-            href="#registration"
+            href="/#registration"
             className="rounded-full border border-primary/30 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:-translate-y-0.5 hover:bg-primary/90"
           >
             Registruotis
@@ -85,7 +85,7 @@ export default function Header() {
               Treniruotės online
             </a>
             <a
-              href="#registration"
+              href="/#registration"
               className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:bg-primary/90"
               onClick={() => setIsOpen(false)}
             >

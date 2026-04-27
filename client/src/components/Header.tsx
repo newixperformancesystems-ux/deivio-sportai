@@ -39,12 +39,21 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href="#registration"
-          className="hidden rounded-full border border-primary/30 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:-translate-y-0.5 hover:bg-primary/90 md:inline-flex"
-        >
-          Registruotis
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href="/treniruotesonline"
+            className="group relative inline-flex overflow-hidden rounded-full border border-white/30 bg-gradient-to-r from-white/15 via-white/8 to-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(255,255,255,0.08)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/55 hover:bg-white/20"
+          >
+            <span className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/35 to-transparent transition-all duration-700 group-hover:left-full" />
+            <span className="relative">Treniruotės online</span>
+          </a>
+          <a
+            href="#registration"
+            className="rounded-full border border-primary/30 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:-translate-y-0.5 hover:bg-primary/90"
+          >
+            Registruotis
+          </a>
+        </div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -68,6 +77,13 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/treniruotesonline"
+              className="inline-flex w-full items-center justify-center rounded-full border border-white/30 bg-gradient-to-r from-white/15 via-white/8 to-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20"
+              onClick={() => setIsOpen(false)}
+            >
+              Treniruotės online
+            </a>
             <a
               href="#registration"
               className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:bg-primary/90"

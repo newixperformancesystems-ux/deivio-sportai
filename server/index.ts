@@ -18,6 +18,15 @@ type RegistrationPayload = {
   trainingGroup?: string;
 };
 
+type OnlineRegistrationPayload = {
+  firstName?: string;
+  lastName?: string;
+  birthYear?: string;
+  frequency?: string;
+  email?: string;
+  phone?: string;
+};
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -45,6 +54,26 @@ function renderEmail(payload: RegistrationPayload) {
     )
     .join("");
   return `<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#111"><h2>Nauja Stride Forward registracija</h2><table style="border-collapse:collapse">${body}</table></body></html>`;
+}
+
+function renderOnlineEmail(payload: OnlineRegistrationPayload) {
+  const rows: Array<[string, string]> = [
+    ["Vardas", payload.firstName || ""],
+    ["Pavardė", payload.lastName || ""],
+    ["Gimimo metai", payload.birthYear || ""],
+    ["Treniruočių dažnumas", payload.frequency || ""],
+    ["El. paštas", payload.email || ""],
+    ["Telefonas", payload.phone || ""],
+  ];
+  const body = rows
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:8px 12px;border:1px solid #ddd;background:#f7f7f7;font-weight:600">${escapeHtml(
+          label,
+        )}</td><td style="padding:8px 12px;border:1px solid #ddd">${escapeHtml(value)}</td></tr>`,
+    )
+    .join("");
+  return `<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#111"><h2>Nauja Stride Forward online treniruočių registracija</h2><table style="border-collapse:collapse">${body}</table></body></html>`;
 }
 
 async function startServer() {
@@ -100,6 +129,57 @@ async function startServer() {
       res.json({ ok: true });
     } catch (err) {
       console.error("Registration error:", err);
+      res.status(500).json({ ok: false, error: "Serverio klaida" });
+    }
+  });
+
+  app.post("/api/register-online", async (req, res) => {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is not set");
+      res.status(500).json({ ok: false, error: "Email service not configured" });
+      return;
+    }
+
+    const payload = (req.body ?? {}) as OnlineRegistrationPayload;
+    if (
+      !payload.firstName ||
+      !payload.lastName ||
+      !payload.birthYear ||
+      !payload.frequency ||
+      !payload.email ||
+      !payload.phone
+    ) {
+      res.status(400).json({ ok: false, error: "Trūksta privalomų laukų" });
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: FROM_EMAIL,
+          to: [RECIPIENT_EMAIL],
+          reply_to: payload.email,
+          subject: `Online registracija: ${payload.firstName} ${payload.lastName}`,
+          html: renderOnlineEmail(payload),
+        }),
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Resend API error:", response.status, text);
+        res.status(502).json({ ok: false, error: "Nepavyko išsiųsti el. laiško" });
+        return;
+      }
+
+      res.json({ ok: true });
+    } catch (err) {
+      console.error("Online registration error:", err);
       res.status(500).json({ ok: false, error: "Serverio klaida" });
     }
   });

@@ -12,6 +12,9 @@ interface CustomSelectProps {
 export default function CustomSelect({ label, options, value, onChange }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string>(value ?? '');
+  useEffect(() => {
+    setSelected(value ?? '');
+  }, [value]);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);

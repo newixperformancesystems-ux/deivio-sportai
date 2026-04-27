@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomSelect from '@/components/CustomSelect';
+import RegistrationForm from '@/components/RegistrationForm';
 
 const backgroundImage = '/hero-hockey.jpg';
 
@@ -94,26 +94,26 @@ const coaches = [
 
 const testimonials = [
   {
-    name: 'Audra Vilimienė',
+    name: 'Audra V.',
     text: 'Puiki stovykla! Mano sūnus per vasarą padarė neįtikėtinų pokyčių. Treneriai – profesionalai, kurie tikrai rūpinasi žaidėjų tobulėjimu. Rekomenduojame!',
   },
   {
-    name: 'Vytautas Kasparas',
+    name: 'Vytautas K.',
     text: 'Svarbu, kad stovykla orientuota ne tik į treniruotes, bet ir į individualius sportininko poreikius. Dukra grįžo namo energinga ir motyvuota. Tikrai verta!',
   },
   {
-    name: 'Laima Čekauskienė',
+    name: 'Laima Č.',
     text: 'Didelis pliusas - profesionali aplinka ir kokybiškas vedimas. Sūnus iš tiesų juda į priekį. Jau žinome, kad grįšime ir kitą vasarą!',
   },
 ];
 
 const galleryItems = [
-  { title: 'Treniruočių akimirka', image: '/gallery/1.jpg' },
-  { title: 'Fizinis pasiruošimas', image: '/gallery/2.jpg' },
-  { title: 'Darbas ant ledo', image: '/gallery/3.jpg' },
-  { title: 'Technikos blokas', image: '/gallery/4.jpg' },
-  { title: 'Individualus dėmesys', image: '/gallery/5.jpg' },
-  { title: 'Komandinė atmosfera', image: '/gallery/6.jpg' },
+  { title: 'Treniruočių akimirka', image: '/gallery/1.jpg', objectPosition: 'center' },
+  { title: 'Darbas ant ledo', image: '/gallery/2.jpg', objectPosition: 'center' },
+  { title: 'Fizinis pasiruošimas', image: '/gallery/3.jpg', objectPosition: 'center' },
+  { title: 'Individualus dėmesys', image: '/gallery/4.jpg', objectPosition: 'center' },
+  { title: 'Technikos blokas', image: '/gallery/5.jpg', objectPosition: 'top' },
+  { title: 'Komandinė atmosfera', image: '/gallery/6.jpg', objectPosition: 'center' },
 ];
 
 const includedItems = [
@@ -191,7 +191,7 @@ export default function Home() {
                   </h1>
 
                   <p className="mt-8 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
-                    Lavename fizines savybes, kurios svarbiausios šiuolaikiniam ledo ritulininkui. Kiekviena treniruotė orientuota į realų progresą ir perkėlimą į žaidimą.
+                    Laviname fizines savybes, kurios svarbiausios šiuolaikiniam ledo ritulininkui. Kiekviena treniruotė orientuota į realų progresą ir perkėlimą į žaidimą.
                   </p>
                   <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                     <a
@@ -303,7 +303,7 @@ export default function Home() {
                       },
                       {
                         title: 'Orientuojamės į tai, kas iš tikrųjų svarbu ledo rituliui',
-                        desc: 'Lavename greitį, galią, mobilumą, stabilumą, koordinaciją ir judėjimo kokybę taip, kad tai turėtų realų perkėlimą į žaidimą.',
+                        desc: 'Laviname greitį, galią, mobilumą, stabilumą, koordinaciją ir judėjimo kokybę taip, kad tai turėtų realų perkėlimą į žaidimą.',
                       },
                       {
                         title: 'Paverčiame vasarą realaus progreso laikotarpiu',
@@ -343,7 +343,7 @@ export default function Home() {
                 description="Mūsų programa orientuota į realų fizinį progresą. Kiekviena treniruotė skirta ugdyti tas savybes, kurios tiesiogiai reikalingos ant ledo ir rungtynėse."
               />
 
-              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 [grid-auto-rows:1fr]">
                 {participantBenefits.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -367,7 +367,7 @@ export default function Home() {
             <div className="container">
               <SectionTitle
                 title="Kaip vyksta stovykla"
-                description="Programa sustruktūrinta taip, kad kiekvienas sportininkas dirbtų jam tinkamiausioje aplinkoje ir gautų maksimalų progresą."
+                description="Programa struktūrizuota taip, kad kiekvienas sportininkas dirbtų jam tinkamiausioje aplinkoje ir gautų maksimalų progresą."
               />
 
               <div className="grid gap-5 lg:grid-cols-3">
@@ -379,7 +379,7 @@ export default function Home() {
                     </div>
                     <h3 className="font-display text-3xl uppercase text-white">{item.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-white/72">{item.text}</p>
-                    <div className="mt-6 rounded-2xl border border-white/10 bg-black/25 p-4 text-xs text-white/60">
+                    <div className="mt-6 rounded-2xl border border-white/10 bg-black/25 p-4 text-sm leading-7 text-white/72">
                       {item.meta}
                     </div>
                   </AngularCard>
@@ -392,7 +392,7 @@ export default function Home() {
             <div className="container">
               <SectionTitle
                 title="Treneriai"
-                description="Jūsų komanda susideda iš patirtų specialistų, kurie turi realų patirtį aukščiausiame lygyje ir žino, kaip padėti sportininkams augti."
+                description="Mūsų komanda susideda iš patyrusių specialistų, kurie turi realią patirtį aukščiausiame lygyje ir žino, kaip padėti sportininkams augti."
               />
 
               <div className="flex flex-wrap justify-center gap-5">
@@ -465,10 +465,7 @@ export default function Home() {
 
           <section id="gallery" className="py-12 md:py-16 scroll-mt-[80px]">
             <div className="container">
-              <SectionTitle
-                title="Galerija"
-                description="Kadangi dabar fokusas yra vizualinė pusė, galerijos bloką paruošiau kaip stiprią nuotraukų sieną. Vėliau čia tiesiog pakeisime paveikslus tavo tikromis stovyklos nuotraukomis."
-              />
+              <SectionTitle title="Galerija" description="" />
 
               <div className="grid gap-4 md:grid-cols-3">
                 {galleryItems.map((item) => (
@@ -480,6 +477,7 @@ export default function Home() {
                       src={item.image}
                       alt={item.title}
                       loading="lazy"
+                      style={{ objectPosition: item.objectPosition }}
                       className="h-full w-full object-cover transition group-hover:scale-105"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
@@ -495,7 +493,7 @@ export default function Home() {
           <section id="pricing" className="py-12 md:py-16 scroll-mt-[80px]">
             <div className="container">
               <SectionTitle
-                title="Kaina ir vietos"
+                title="Kaina"
                 description="Pasirinkite tinkamą treniruotės grupę ir investuokite į savo atletinį augimą."
               />
 
@@ -503,7 +501,7 @@ export default function Home() {
                 {[
                   { group: 'U-14', sessions: 2, price: 30, description: 'Jauniausia grupė' },
                   { group: 'U-16', sessions: 3, price: 40, description: 'Vidutinio amžiaus' },
-                  { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniausiųjų jaunimo' },
+                  { group: 'U-20', sessions: 4, price: 50, description: 'Vyresniųjų jaunimo' },
                   { group: 'Pro', sessions: 5, price: 60, description: 'Profesionali grupė' },
                 ].map((tier) => (
                   <AngularCard key={tier.group} className="flex flex-col">
@@ -538,45 +536,7 @@ export default function Home() {
               />
 
               <AngularCard>
-                <form className="mx-auto max-w-2xl grid gap-3">
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {[
-                      { label: 'Vardas, Pavardė', type: 'text', placeholder: 'Vardas, Pavardė' },
-                      { label: 'Gimimo data', type: 'date', placeholder: '' },
-                      { label: 'Tėvų / įstaigos el. paštas', type: 'email', placeholder: 'El. paštas' },
-                      { label: 'Telefonas', type: 'tel', placeholder: '+370' },
-                    ].map((field) => (
-                      <label key={field.label} className="block">
-                        <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-                          {field.label}
-                        </span>
-                        <input
-                          type={field.type}
-                          placeholder={field.placeholder}
-                          className="h-12 w-full rounded-xl border border-white/10 bg-black/30 px-4 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-primary"
-                        />
-                      </label>
-                    ))}
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <CustomSelect
-                      label="Pozicija"
-                      options={['Puolėjas', 'Gynėjas', 'Vartininkas']}
-                    />
-                    <CustomSelect
-                      label="Treniruotės grupė"
-                      options={['U-14 2 kartai 30€ per sav.', 'U-16 3 kartai 40€ per sav.', 'U-20 4 kartai 50€ per sav.', 'Pro 5 kartai 60€ per sav.']}
-                    />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <input type="checkbox" id="terms" className="rounded" />
-                    <label htmlFor="terms" className="text-xs text-white/60">Aš sutinku su registracijos sąlygomis</label>
-                  </div>
-
-                  <p className="text-xs text-white/50 text-center sm:text-left">
-                    Po registracijos susisieksime per 24 valandas ir patikslinsime visas detales.
-                  </p>
-                </form>
+                <RegistrationForm />
               </AngularCard>
             </div>
           </section>

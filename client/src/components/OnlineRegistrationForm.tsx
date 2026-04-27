@@ -93,13 +93,14 @@ export default function OnlineRegistrationForm() {
             Gimimo metai
           </span>
           <input
-            type="number"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]{4}"
             required
-            min="1950"
-            max="2025"
+            maxLength={4}
             placeholder="pvz. 2008"
             value={birthYear}
-            onChange={(e) => setBirthYear(e.target.value)}
+            onChange={(e) => setBirthYear(e.target.value.replace(/\D/g, ''))}
             className={inputClass}
           />
         </label>

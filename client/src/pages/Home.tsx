@@ -95,11 +95,11 @@ const coaches = [
 
 const testimonials = [
   {
-    name: 'Deimantas V.',
+    name: 'Deimantas Vailionis',
     text: 'Deividas geba prisitaikyti prie skirtingų žaidėjų ir jų fizinio pasirengimo lygio. Labiausiai patinka, kad dirbam kaip komanda ir planus dėliojam kartu, todėl jie būna realistiški ir veiksmingi.',
   },
   {
-    name: 'Martynas G.',
+    name: 'Martynas Grinius',
     text: 'Deivido įėjimas į vyrų ledo ritulio rinktinę labai daug pridėjo, aš asmeniškai žemės pasiruošimą jaučiu daug geriau.',
   },
   {

@@ -27,7 +27,7 @@ export default function Header() {
           </div>
         </a>
 
-        <nav className="hidden items-center gap-7 xl:flex">
+        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -39,17 +39,17 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-2 xl:flex 2xl:gap-3">
           <a
             href="/treniruotesonline"
-            className="group relative inline-flex overflow-hidden rounded-full border border-white/30 bg-gradient-to-r from-white/15 via-white/8 to-white/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(255,255,255,0.08)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/55 hover:bg-white/20"
+            className="group relative inline-flex overflow-hidden rounded-full border border-white/30 bg-gradient-to-r from-white/15 via-white/8 to-white/15 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(255,255,255,0.08)] backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/55 hover:bg-white/20 2xl:px-6 2xl:py-3 2xl:text-xs 2xl:tracking-[0.18em]"
           >
             <span className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/35 to-transparent transition-all duration-700 group-hover:left-full" />
             <span className="relative">Treniruotės online</span>
           </a>
           <a
             href="/#registration"
-            className="rounded-full border border-primary/30 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:-translate-y-0.5 hover:bg-primary/90"
+            className="rounded-full border border-primary/30 bg-primary px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_14px_34px_rgba(230,64,47,0.3)] transition hover:-translate-y-0.5 hover:bg-primary/90 2xl:px-6 2xl:py-3 2xl:text-xs 2xl:tracking-[0.18em]"
           >
             Registruotis
           </a>

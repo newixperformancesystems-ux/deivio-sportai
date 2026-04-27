@@ -141,25 +141,6 @@ export default function TreniruotesOnline() {
           </div>
         </section>
 
-        <section className="container py-20">
-          <SectionTitle
-            title="Kaip tai veikia"
-            description="Visa sistema sukurta taip, kad atletas tiksliai žinotų, ką daryti, o mes — kaip jam padėti."
-          />
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:1fr]">
-            {benefits.map((benefit) => (
-              <AngularCard key={benefit.title} className="flex flex-col">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary">
-                  <benefit.icon size={22} />
-                </div>
-                <div className="font-display text-2xl uppercase text-white">{benefit.title}</div>
-                <p className="mt-2 text-sm leading-6 text-white/70">{benefit.text}</p>
-              </AngularCard>
-            ))}
-          </div>
-        </section>
-
         <section id="video" className="container py-20">
           <SectionTitle
             title="Kaip atrodo programa"
